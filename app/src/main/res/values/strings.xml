@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MeetingScheduler</string>
+    <string name="previous">Prev</string>
+    <string name="next">Next</string>
+    <string name="default_date">00-00-0000</string>
+    <string name="schedule_company_meeting">Schedule Company Meeting</string>
 </resources>

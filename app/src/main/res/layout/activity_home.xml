@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HomeActivity">
+
+    <RelativeLayout
+            android:paddingVertical="@dimen/dp10"
+            android:background="@color/colorPrimary"
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:id="@+id/btn_prev"
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/previous"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:drawableStart="@drawable/left_arrow"
+                android:textSize="@dimen/sp20"/>
+
+        <TextView
+                android:id="@+id/btn_next"
+                android:layout_alignParentEnd="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/next"
+                android:textColor="@color/white"
+                android:textAllCaps="true"
+                android:gravity="center"
+                android:drawableEnd="@drawable/right_arrow"
+                android:textSize="@dimen/sp20"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_date"
+                android:layout_centerInParent="true"
+                android:textSize="@dimen/sp20"
+                android:text="@string/default_date"
+                android:textColor="@color/white"/>
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+            android:layout_below="@id/top_layout"
+            android:layout_above="@id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+            android:background="@color/light_grey"
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp10"
+            android:layout_alignParentBottom="true">
+
+        <Button
+                android:textSize="@dimen/sp20"
+                android:layout_marginHorizontal="@dimen/dp10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/schedule_company_meeting"
+                android:textColor="@color/white"
+                android:background="@drawable/btn_bg"
+                tools:targetApi="o"/>
+    </RelativeLayout>
+
+</RelativeLayout>
