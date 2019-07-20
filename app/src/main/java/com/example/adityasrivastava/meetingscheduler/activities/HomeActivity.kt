@@ -1,7 +1,8 @@
-package com.example.adityasrivastava.meetingscheduler
+package com.example.adityasrivastava.meetingscheduler.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.adityasrivastava.meetingscheduler.R
 
 class HomeActivity : AppCompatActivity() {
 

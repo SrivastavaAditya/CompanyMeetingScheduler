@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_grey">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_time_slot"
+            android:text="00:00AM - 00:00PM"
+            android:textSize="@dimen/sp15"
+            android:layout_marginTop="@dimen/dp8"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="@dimen/dp8"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+    <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp1"
+            android:id="@+id/separator"
+            android:background="@color/dark_grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginStart="@dimen/dp8"
+            android:layout_marginEnd="@dimen/dp8"
+            app:layout_constraintTop_toBottomOf="@id/tv_time_slot"/>
+
+    <TextView
+            android:id="@+id/tv_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/separator"
+            android:textColor="@color/app_text_color"
+            android:text="@string/lorem_ipsum"
+            android:layout_marginStart="@dimen/dp8"
+            android:textSize="@dimen/sp15"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginBottom="@dimen/dp8"
+            android:layout_marginTop="@dimen/dp8"
+            app:layout_constraintBottom_toTopOf="@id/bottom_border"
+            android:layout_marginEnd="@dimen/dp8"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+    <View
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp1"
+            android:id="@+id/bottom_border"
+            android:background="@color/app_text_color"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/dp8"
+            app:layout_constraintTop_toBottomOf="@id/tv_description"/>
+</android.support.constraint.ConstraintLayout>

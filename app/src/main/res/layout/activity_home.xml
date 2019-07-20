@@ -5,10 +5,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".HomeActivity">
+        tools:context=".activities.HomeActivity">
 
-    <RelativeLayout
-            android:paddingVertical="@dimen/dp10"
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:background="@color/colorPrimary"
             android:id="@+id/top_layout"
             android:layout_width="match_parent"
@@ -24,7 +23,13 @@
                 android:textAllCaps="true"
                 android:gravity="center"
                 android:drawableStart="@drawable/left_arrow"
-                android:textSize="@dimen/sp20"/>
+                android:textSize="@dimen/sp15"
+                android:layout_marginTop="@dimen/dp8"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/dp8"
+                android:layout_marginStart="@dimen/dp8"
+                app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
                 android:id="@+id/btn_next"
@@ -36,7 +41,13 @@
                 android:textAllCaps="true"
                 android:gravity="center"
                 android:drawableEnd="@drawable/right_arrow"
-                android:textSize="@dimen/sp20"/>
+                android:textSize="@dimen/sp15"
+                android:layout_marginTop="@dimen/dp8"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/dp8"
+                android:layout_marginEnd="@dimen/dp8"
+                app:layout_constraintEnd_toEndOf="parent"/>
 
         <TextView
                 android:layout_width="wrap_content"
@@ -45,8 +56,16 @@
                 android:layout_centerInParent="true"
                 android:textSize="@dimen/sp20"
                 android:text="@string/default_date"
-                android:textColor="@color/white"/>
-    </RelativeLayout>
+                android:textColor="@color/white"
+                app:layout_constraintStart_toEndOf="@+id/btn_prev"
+                android:layout_marginStart="@dimen/dp8"
+                android:layout_marginEnd="@dimen/dp8"
+                app:layout_constraintEnd_toStartOf="@+id/btn_next"
+                android:layout_marginBottom="@dimen/dp8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginTop="@dimen/dp8"
+                app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
             android:layout_below="@id/top_layout"
@@ -54,24 +73,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 
-    <RelativeLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
             android:background="@color/light_grey"
             android:id="@+id/bottom_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="@dimen/dp10"
             android:layout_alignParentBottom="true">
 
         <Button
                 android:textSize="@dimen/sp20"
-                android:layout_marginHorizontal="@dimen/dp10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
                 android:text="@string/schedule_company_meeting"
                 android:textColor="@color/white"
                 android:background="@drawable/btn_bg"
-                tools:targetApi="o"/>
-    </RelativeLayout>
+                android:layout_marginTop="@dimen/dp8"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="@dimen/dp24"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/dp8"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginStart="@dimen/dp24"
+                app:layout_constraintStart_toStartOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </RelativeLayout>
