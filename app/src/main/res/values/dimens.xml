@@ -12,4 +12,5 @@
     <dimen name="dp24">24dp</dimen>
     <dimen name="dp32">32dp</dimen>
     <dimen name="dp64">64dp</dimen>
+    <dimen name="sp25">25sp</dimen>
 </resources>

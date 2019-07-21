@@ -29,5 +29,6 @@ class MeetingAdapter(val context: Context): RecyclerView.Adapter<RecyclerView.Vi
 
     fun setData(list: ArrayList<Meeting>){
         this.list = list
+        notifyDataSetChanged()
     }
 }
