@@ -14,4 +14,6 @@
     <string name="lorem_ipsum">Lorem Ipsum</string>
     <string name="please_wait">Please Wait</string>
     <string name="no_meeting_scheduled">No Meeting Scheduled</string>
+    <string name="slot_available">Slot Available</string>
+    <string name="slot_not_available">Slot not Available</string>
 </resources>

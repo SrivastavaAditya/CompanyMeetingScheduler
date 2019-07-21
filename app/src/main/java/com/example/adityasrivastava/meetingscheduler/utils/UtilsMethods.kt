@@ -1,6 +1,7 @@
 package com.example.adityasrivastava.meetingscheduler.utils
 
 import android.content.Context
+import android.widget.Toast
 import java.security.AccessControlContext
 import java.text.ParseException
 import java.text.SimpleDateFormat
@@ -65,5 +66,9 @@ object UtilsMethods {
             return true
         }
         return false
+    }
+
+    fun showMessage(context: Context, message: String, timeDuration: Int){
+        Toast.makeText(context, message, timeDuration).show()
     }
 }
