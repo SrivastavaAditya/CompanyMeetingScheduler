@@ -12,8 +12,14 @@ import com.example.adityasrivastava.meetingscheduler.pojos.Meeting
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
+/*
+ *View Model
+ */
 class MeetingVM(application: Application): AndroidViewModel(application) {
 
+    /*
+     *Method to call API
+     */
     fun getMeetingsSchedule(context: Context, date: String): MutableLiveData<List<Meeting>>{
         val loadingDialog = LoadingDialog(context)
         loadingDialog.show()

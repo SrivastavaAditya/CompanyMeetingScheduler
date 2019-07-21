@@ -138,7 +138,5 @@
                     app:layout_constraintEnd_toEndOf="@+id/editText"
                     app:layout_constraintStart_toStartOf="@+id/editText"/>
         </LinearLayout>
-
     </androidx.core.widget.NestedScrollView>
-
 </LinearLayout>

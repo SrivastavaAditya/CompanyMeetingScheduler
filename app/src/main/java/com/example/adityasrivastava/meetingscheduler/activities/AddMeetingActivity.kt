@@ -18,12 +18,21 @@ import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
+/*
+ *Activity
+ */
 class AddMeetingActivity : AppCompatActivity() {
 
+    /*
+    *Variable Initialization
+    */
     lateinit var meetingVM: MeetingVM
     var listOfMeetings = arrayListOf<Meeting>()
     var isMeetingPossible = true
 
+    /*
+     *onCreate Callback
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_meeting)
@@ -60,6 +69,9 @@ class AddMeetingActivity : AppCompatActivity() {
         }
     }
 
+    /*
+     *Date Picker Dialog
+     */
     private fun showDatePicker() {
         val c = Calendar.getInstance()
         val year = c.get(Calendar.YEAR)
@@ -82,6 +94,9 @@ class AddMeetingActivity : AppCompatActivity() {
         }, year, month, day).show()
     }
 
+    /*
+     *Time Picker Dialog implemented in Extension Function
+     */
     private fun TextView.pickTime(){
         val calendar = Calendar.getInstance()
         TimePickerDialog(this@AddMeetingActivity, TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
@@ -104,6 +119,10 @@ class AddMeetingActivity : AppCompatActivity() {
         }
     }
 
+   /*
+    *Check for Slot Availability
+    *returns true if listOfMeetings is empty or if slots do not overlap with other meetings
+    */
     private fun checkAvailableSlot(): Boolean {
         if(listOfMeetings.isNullOrEmpty()){
             return true

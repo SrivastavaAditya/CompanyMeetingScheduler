@@ -5,12 +5,12 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
-    /**
-     * Retrofit Interface
+    /*
+     *Retrofit Interface
      */
     val retrofitInterface: RetrofitInterface
-    /**
-     * Base URL
+    /*
+     *Base URL
      */
     private const val baseUrl = "http://fathomless-shelf-5846.herokuapp.com/api/"
 

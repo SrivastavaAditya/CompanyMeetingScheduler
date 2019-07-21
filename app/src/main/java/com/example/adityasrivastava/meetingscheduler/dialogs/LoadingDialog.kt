@@ -4,7 +4,14 @@ import android.app.Dialog
 import android.content.Context
 import com.example.adityasrivastava.meetingscheduler.R
 
+/*
+ *Dialog
+ */
 class LoadingDialog(context: Context) {
+
+    /*
+     *Variable Initialization
+     */
     var dialog: Dialog = Dialog(context)
 
     init {

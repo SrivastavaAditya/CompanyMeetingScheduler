@@ -14,12 +14,21 @@ import com.example.adityasrivastava.meetingscheduler.utils.UtilsMethods
 import com.example.adityasrivastava.meetingscheduler.viewmodels.MeetingVM
 import kotlinx.android.synthetic.main.activity_home.*
 
+/*
+ *Activity
+ */
 class HomeActivity : AppCompatActivity() {
 
+    /*
+     *Variable Initialization
+     */
     var currentDate = ""
     lateinit var meetingVM: MeetingVM
     lateinit var mAdapter: MeetingAdapter
 
+    /*
+     *OnCreate Callback
+     */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
