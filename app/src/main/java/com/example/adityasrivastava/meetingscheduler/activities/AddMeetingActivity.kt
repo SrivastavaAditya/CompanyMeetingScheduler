@@ -87,7 +87,7 @@ class AddMeetingActivity : AppCompatActivity() {
         TimePickerDialog(this@AddMeetingActivity, TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
             calendar.set(Calendar.HOUR_OF_DAY, hour)
             calendar.set(Calendar.MINUTE, minute)
-            val timeFormat = SimpleDateFormat("HH:mm aa", Locale.getDefault())
+            val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
             this.text = timeFormat.format(calendar.time)
         }, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), true).show()
     }

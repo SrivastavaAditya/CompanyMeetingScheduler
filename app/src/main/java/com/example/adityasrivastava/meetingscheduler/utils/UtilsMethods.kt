@@ -12,7 +12,7 @@ object UtilsMethods {
 
     fun convertTime24HourTo12Hour(time: String): String{
         var time12Hour = time
-        val format24 = SimpleDateFormat("hh:mm", Locale.getDefault())
+        val format24 = SimpleDateFormat("HH:mm", Locale.getDefault())
         val format12 = SimpleDateFormat("hh:mm aa", Locale.getDefault())
         try{
             val date = format24.parse(time)
@@ -25,12 +25,12 @@ object UtilsMethods {
     }
 
     fun checkSlotValidity(startTime: String, endTime: String): Boolean{
-        val timeFormat = SimpleDateFormat("hh:mm", Locale.getDefault())
+        val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
         return timeFormat.parse(startTime).before(timeFormat.parse(endTime))
     }
 
     fun checkForOverlappingTime(meeting: Meeting, startTime: String, endTime: String): Boolean{
-        val timeFormat = SimpleDateFormat("hh:mm", Locale.getDefault())
+        val timeFormat = SimpleDateFormat("HH:mm", Locale.getDefault())
         val mStartTime = timeFormat.parse(meeting.start_time)
         val mEndTime = timeFormat.parse(meeting.end_time)
 
