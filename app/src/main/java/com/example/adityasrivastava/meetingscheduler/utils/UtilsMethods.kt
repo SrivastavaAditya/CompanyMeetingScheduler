@@ -9,7 +9,7 @@ import java.util.*
 object UtilsMethods {
 
     fun convertTime24HourTo12Hour(time: String): String{
-        var time12Hour = time;
+        var time12Hour = time
         val format24 = SimpleDateFormat("hh:mm", Locale.getDefault())
         val format12 = SimpleDateFormat("hh:mm aa", Locale.getDefault())
         try{
@@ -41,5 +41,29 @@ object UtilsMethods {
         calendar.time = dateFormat.parse(currentDate)
         calendar.add(Calendar.DATE, -1)
         return dateFormat.format(calendar.time)
+    }
+
+    fun getAPIDateFormat(dateStr: String):String{
+        val localFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+        val apiFormat = SimpleDateFormat("dd/MM/yyyy", Locale.getDefault())
+
+        var apiDate = dateStr
+        try{
+            val date = localFormat.parse(dateStr)
+            apiDate = apiFormat.format(date)
+        }catch (e: ParseException){
+            e.printStackTrace()
+        }finally {
+            return apiDate
+        }
+    }
+
+    fun checkForPastDate(dateStr: String): Boolean{
+        val dateFormat = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
+        val date = dateFormat.parse(dateStr)
+        if(date.before(dateFormat.parse(getTodayDate()))){
+            return true
+        }
+        return false
     }
 }

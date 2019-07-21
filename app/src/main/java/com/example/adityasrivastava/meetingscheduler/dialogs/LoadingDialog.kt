@@ -2,6 +2,7 @@ package com.example.adityasrivastava.meetingscheduler.dialogs
 
 import android.app.Dialog
 import android.content.Context
+import com.example.adityasrivastava.meetingscheduler.R
 
 class LoadingDialog(context: Context) {
     var dialog: Dialog = Dialog(context)

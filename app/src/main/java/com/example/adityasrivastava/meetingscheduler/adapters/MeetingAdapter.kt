@@ -7,6 +7,7 @@ import com.example.adityasrivastava.meetingscheduler.R
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adityasrivastava.meetingscheduler.adapters.viewholders.MeetingVH
 import com.example.adityasrivastava.meetingscheduler.pojos.Meeting
+import com.example.adityasrivastava.meetingscheduler.utils.UtilsMethods
 import kotlinx.android.synthetic.main.item_meeting.view.*
 
 
@@ -24,6 +25,7 @@ class MeetingAdapter(val context: Context): RecyclerView.Adapter<RecyclerView.Vi
         val meetingObj = list.get(position)
         val meetingVH = holder as MeetingVH
 
+        meetingVH.itemView.tv_time_slot.text = "${meetingObj.start_time?.let { UtilsMethods.convertTime24HourTo12Hour(it) }} - ${meetingObj.end_time?.let { UtilsMethods.convertTime24HourTo12Hour(it) }}"
         meetingVH.itemView.tv_description.text = meetingObj.description
     }
 
