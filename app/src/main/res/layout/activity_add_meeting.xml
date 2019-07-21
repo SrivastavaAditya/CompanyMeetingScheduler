@@ -8,7 +8,7 @@
         tools:context=".activities.HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:id="@+id/top_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -121,7 +121,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/submit"
                 android:textColor="@color/white"
-                android:background="@drawable/btn_bg_enabled"
+                android:background="@drawable/btn_selector"
                 android:layout_marginTop="@dimen/dp64"
                 app:layout_constraintTop_toBottomOf="@+id/editText"
                 app:layout_constraintEnd_toEndOf="@+id/editText"

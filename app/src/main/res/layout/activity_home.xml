@@ -8,7 +8,7 @@
         tools:context=".activities.HomeActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-            android:background="@color/colorPrimary"
+            android:background="@color/colorAccent"
             android:id="@+id/top_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">

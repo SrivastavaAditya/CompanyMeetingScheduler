@@ -16,4 +16,6 @@
     <string name="no_meeting_scheduled">No Meeting Scheduled</string>
     <string name="slot_available">Slot Available</string>
     <string name="slot_not_available">Slot not Available</string>
+    <string name="cannot_schedule_meeting_for_past_dates">Cannot schedule meeting for past dates</string>
+    <string name="start_time_before_end_time">Start Time should be before End Time</string>
 </resources>

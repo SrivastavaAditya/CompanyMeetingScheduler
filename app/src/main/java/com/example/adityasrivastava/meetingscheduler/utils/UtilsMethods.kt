@@ -2,7 +2,8 @@ package com.example.adityasrivastava.meetingscheduler.utils
 
 import android.content.Context
 import android.widget.Toast
-import java.security.AccessControlContext
+import androidx.loader.app.LoaderManager
+import com.example.adityasrivastava.meetingscheduler.pojos.Meeting
 import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
@@ -21,6 +22,35 @@ object UtilsMethods {
         }finally {
             return time12Hour
         }
+    }
+
+    fun checkSlotValidity(startTime: String, endTime: String): Boolean{
+        val timeFormat = SimpleDateFormat("hh:mm", Locale.getDefault())
+        return timeFormat.parse(startTime).before(timeFormat.parse(endTime))
+    }
+
+    fun checkForOverlappingTime(meeting: Meeting, startTime: String, endTime: String): Boolean{
+        val timeFormat = SimpleDateFormat("hh:mm", Locale.getDefault())
+        val mStartTime = timeFormat.parse(meeting.start_time)
+        val mEndTime = timeFormat.parse(meeting.end_time)
+
+        val tempStartTime = timeFormat.parse(startTime)
+        val tempEndTime = timeFormat.parse(endTime)
+
+        if(timeFormat.format(tempStartTime).equals(meeting.start_time) || timeFormat.format(tempEndTime).equals(meeting.end_time)){
+            return true
+        }
+
+        if((tempStartTime.after(mStartTime) && tempStartTime.before(mEndTime))){
+            return true
+        }else if(tempEndTime.after(mStartTime) && tempEndTime.before(mEndTime)){
+            return true
+        }
+
+        if(tempStartTime.before(mStartTime) && tempEndTime.after(mEndTime)){
+            return true
+        }
+        return false
     }
 
     fun getTodayDate(): String{
