@@ -52,21 +52,40 @@ class AddMeetingActivity : AppCompatActivity() {
         }
 
         btn_submit.setOnClickListener {
-            if(UtilsMethods.checkSlotValidity(tv_start_time.text.toString(), tv_end_time.text.toString())){
-                if(checkAvailableSlot()){
-                    UtilsMethods.showMessage(this, resources.getString(R.string.slot_available), Toast.LENGTH_LONG)
+            if(validEntries()){
+                if(UtilsMethods.checkSlotValidity(tv_start_time.text.toString(), tv_end_time.text.toString())){
+                    if(checkAvailableSlot()){
+                        UtilsMethods.showMessage(this, resources.getString(R.string.slot_available), Toast.LENGTH_LONG)
+                    }else{
+                        UtilsMethods.showMessage(this, resources.getString(R.string.slot_not_available), Toast.LENGTH_LONG)
+                    }
                 }else{
-                    UtilsMethods.showMessage(this, resources.getString(R.string.slot_not_available), Toast.LENGTH_LONG)
+                    UtilsMethods.showMessage(this, resources.getString(R.string.start_time_before_end_time), Toast.LENGTH_LONG)
                 }
-            }else{
-                UtilsMethods.showMessage(this, resources.getString(R.string.start_time_before_end_time), Toast.LENGTH_LONG)
             }
-
         }
 
         btn_back.setOnClickListener {
             onBackPressed()
         }
+    }
+
+    private fun validEntries(): Boolean {
+        if(tv_meeting_date.text.toString().equals(resources.getString(R.string.meeting_date), true)){
+            UtilsMethods.showMessage(this, resources.getString(R.string.please_select_meeting_date), Toast.LENGTH_LONG)
+            return false
+        }
+
+        if(tv_start_time.text.toString().equals(resources.getString(R.string.start_time), true)){
+            UtilsMethods.showMessage(this, resources.getString(R.string.please_select_start_time), Toast.LENGTH_LONG)
+            return false
+        }
+
+        if(tv_end_time.text.toString().equals(resources.getString(R.string.end_time), true)){
+            UtilsMethods.showMessage(this, resources.getString(R.string.please_select_end_time), Toast.LENGTH_LONG)
+            return false
+        }
+        return true
     }
 
     /*
